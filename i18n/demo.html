@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="js/jquery.i18n.properties-1.0.9.js"></script>
+</head>
+<body>
+<span id="label-username"></span>
+<label id="label-password"></label>
+<script type="text/javascript">
+    $(function () {
+        $.i18n.properties({
+            name: 'strings',
+            path: './properties/',
+            mode: 'map',
+            callback: function () {
+                $('#label-username').html($.i18n.prop('User Name'));
+                $('#label-password').html($.i18n.prop('Password'));
+            }
+        });
+    })
+</script>
+</body>
+</html>

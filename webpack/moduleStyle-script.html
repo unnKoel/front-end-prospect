@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <!--<script src="js/script-involved-b.js"></script>-->
+    <script src="js/script-involved-a.js"></script>
+</head>
+<body>
+<a href="javascript:void(0)">点这里</a>
+<script>
+    $("a").on("click", function () {
+        alert("hello script tag.");
+    });
+    alert(window.c);
+    alert($.welcome);
+</script>
+</body>
+</html>
