@@ -1,0 +1,23 @@
+1.对文件属性读写
+  fs.chmod,fs.chown,fs.stat
+2.对文件内容读写
+  fs.readFile,fs.writeFile,fs.readdir,fs.mkdir等
+3.底层文件操作
+  fs.open,fs.read,fs.write,fs.close
+
+  异步IO模型
+  fs.readFile(pathname,function(err,data)){
+      if(err){
+         //deal with error.
+      }else{
+         //deal with data.
+      }
+  }
+
+  同步IO模型
+  try{
+    var data=fs.readFileSync(pathname);
+  }catch(err){
+    //deal with error.
+  }
+
