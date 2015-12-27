@@ -1,0 +1,23 @@
+Q:pc 浏览器如何打开webGL?
+  google：
+  我们需要为Chrome加入一些启动参数，以下具体操作步骤以Windows操作系统为例，请Linux用户自行设置。
+  Chrome浏览器的用户请找到Chrome浏览器的快捷方式，如果没有就创建一个快捷方式（右键点击chrome.exe，选择“创建快捷方式”或者“发送到”→“桌面快捷方式”），右键点击快捷方式，选择属性。
+  在目标框内，双引号的后边，加入以下内容：
+  --enable-webgl --ignore-gpu-blacklist --allow-file-access-from-files
+  关闭目前开启的所有Chrome窗口，然后用此快捷方式启动Chrome浏览器，其中：
+  表示开启WebGL支持：
+  --enable-webgl
+  表示忽略GPU黑名单，也就是说有一些显卡GPU因为过于陈旧等原因，不建议运行WebGL，这个参数可以让浏览器忽略这个黑名单，强制运行WebGL：
+  --ignore-gpu-blacklist
+  表示允许从本地载入资源，如果你不是WebGL的开发者，不需要开发调试WebGL，只是想要看一下WebGL的Demo，那你可以不添加这个参数：
+  --allow-file-access-from-files
+
+  firfox:
+  Mozilla Firefox开启方法Firefox的用户请在浏览器的地址栏输入“about:config”，回车后：
+  1、在过滤器（filter）中搜索“webgl”
+  将webgl.force-enabled设置为true
+  将webgl.disabled设置为false
+  2、在过滤器（filter）中搜索“security.fileuri.strict_origin_policy”
+  将security.fileuri.strict_origin_policy设置为false
+  关闭目前开启的所有Firefox窗口，然后重新启动Firefox。
+  其中前两个设置是强制开启WebGL支持，最后一个security.fileuri.strict_origin_policy的设置是允许从本地载入资源，如果你不是WebGL的开发者，不需要开发调试WebGL，只是想要看一下WebGL的Demo，那你可以不设置此项。
